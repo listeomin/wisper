@@ -1,0 +1,12 @@
+{
+  "name": "wisper",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently \"sass --watch scss:css\" \"browser-sync start --server --files 'css/**/*.css, *.html, js/**/*.js' --browser 'Safari' --inject-changes\""
+  },
+  "devDependencies": {
+    "sass": "^2.0.0",
+    "browser-sync": "^2.29.0",
+    "concurrently": "^8.0.0"
+  }
+}

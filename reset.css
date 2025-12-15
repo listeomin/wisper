@@ -1,0 +1,105 @@
+/* =========================================================
+   /reset.css
+   ========================================================= */
+
+/* ===== 2025 Modern CSS Reset ===== */
+
+/* Box sizing и базовая настройка */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Базовые HTML элементы */
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: system-ui, sans-serif;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #fff;
+  color: #000;
+}
+
+/* Сброс заголовков, списков, цитат */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+  content: '';
+}
+
+/* Ссылки и кнопки */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Формы и поля ввода */
+input, textarea, select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  resize: none;
+}
+
+/* Изображения и медиа */
+img, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Таблицы */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Скрытые элементы */
+[hidden] {
+  display: none !important;
+}
+
+/* Улучшение scroll на всех браузерах */
+body {
+  -webkit-overflow-scrolling: touch;
+  overflow-anchor: none;
+}
+
+/* Сброс деталей браузера по дефолту */
+hr {
+  border: none;
+  height: 1px;
+  background: #ccc;
+}

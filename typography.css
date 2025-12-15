@@ -1,0 +1,194 @@
+/* ================================================
+   WISPER — typography system ✒️
+   /typography.css
+
+   ⛩️ Здесь живёт ритм текста!
+   
+   Сутры:
+   – Размеры и межстрочные ТОЛЬКО через переменные
+   – Никаких font-size / line-height в компонентах
+   – Шрифты подключаются, но не изобретаются заново
+
+   Хочешь изменить масштаб —
+   двигай переменные, а не классы.
+   ================================================ */
+
+
+   :root {
+
+  /* ===== FONT FAMILIES ===== */
+
+  --font-sans: "Noto Sans", system-ui, -apple-system, sans-serif;
+  --font-serif: "Noto Serif";
+  --font-mono: "Ubuntu Mono", ui-monospace, monospace;
+
+
+  /* ===== SANS / SERIF — HEADINGS ===== */
+
+  --h1-size: 1.75em;   /* 28px / 16 */
+  --h1-line: 2.25em;   /* 36px / 16 */
+
+  --h2-size: 1.5em;    /* 24px / 16 */
+  --h2-line: 1.75em;   /* 28px / 16 */
+
+  --h3-size: 1.25em;   /* 20px / 16 */
+  --h3-line: 1.375em;  /* 22px / 16 */
+
+  --h4-size: 1.125em;  /* 18px / 16 */
+  --h4-line: 1.25em;   /* 20px / 16 */
+
+  --h5-size: 1em;      /* 16px / 16 */
+  --h5-line: 1.25em;   /* 20px / 16 */
+
+
+  /* ===== SANS / SERIF — BODY ===== */
+
+  --body-m-size: 0.9375em; /* 15px / 16 */
+  --body-m-line: 1.25em;   /* 20px / 16 */
+
+  --body-s-size: 0.8125em; /* 13px / 16 */
+  --body-s-line: 1.125em;  /* 18px / 16 */
+
+
+  /* ===== MONO — BODY ===== */
+
+  --mono-m-size: 0.9375em; /* 15px / 16 */
+  --mono-m-line: 1.25em;   /* 20px / 16 */
+
+  --mono-s-size: 0.8125em; /* 13px / 16 */
+  --mono-s-line: 1.125em;  /* 18px / 16 */
+}
+
+
+
+/* =========================================================
+   SANS
+   ========================================================= */
+
+.sans {
+  font-family: var(--font-sans);
+}
+
+/* ===== SANS — HEADINGS ===== */
+
+.sans.h1 {
+  font-size: var(--h1-size);
+  line-height: var(--h1-line);
+  font-weight: 700;
+}
+
+.sans.h2 {
+  font-size: var(--h2-size);
+  line-height: var(--h2-line);
+  font-weight: 700;
+}
+
+.sans.h3 {
+  font-size: var(--h3-size);
+  line-height: var(--h3-line);
+  font-weight: 700;
+}
+
+.sans.h4 {
+  font-size: var(--h4-size);
+  line-height: var(--h4-line);
+  font-weight: 600;
+}
+
+.sans.h5 {
+  font-size: var(--h5-size);
+  line-height: var(--h5-line);
+  font-weight: 600;
+}
+
+/* ===== SANS — BODY ===== */
+
+.sans.body-m {
+  font-size: var(--body-m-size);
+  line-height: var(--body-m-line);
+  font-weight: 400;
+}
+
+.sans.body-s {
+  font-size: var(--body-s-size);
+  line-height: var(--body-s-line);
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   SERIF
+   ========================================================= */
+
+.serif {
+  font-family: var(--font-serif);
+}
+
+/* ===== SERIF — HEADINGS ===== */
+
+.serif.h1 {
+  font-size: var(--h1-size);
+  line-height: var(--h1-line);
+  font-weight: 700;
+}
+
+.serif.h2 {
+  font-size: var(--h2-size);
+  line-height: var(--h2-line);
+  font-weight: 700;
+}
+
+.serif.h3 {
+  font-size: var(--h3-size);
+  line-height: var(--h3-line);
+  font-weight: 700;
+}
+
+.serif.h4 {
+  font-size: var(--h4-size);
+  line-height: var(--h4-line);
+  font-weight: 600;
+}
+
+.serif.h5 {
+  font-size: var(--h5-size);
+  line-height: var(--h5-line);
+  font-weight: 600;
+}
+
+/* ===== SERIF — BODY ===== */
+
+.serif.body-m {
+  font-size: var(--body-m-size);
+  line-height: var(--body-m-line);
+  font-weight: 400;
+}
+
+.serif.body-s {
+  font-size: var(--body-s-size);
+  line-height: var(--body-s-line);
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   MONO
+   ========================================================= */
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+/* ===== MONO — BODY ===== */
+
+.mono.body-m {
+  font-size: var(--mono-m-size);
+  line-height: var(--mono-m-line);
+  font-weight: 400;
+}
+
+.mono.body-s {
+  font-size: var(--mono-s-size);
+  line-height: var(--mono-s-line);
+  font-weight: 400;
+}
