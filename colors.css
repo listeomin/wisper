@@ -1,69 +1,66 @@
-/* ==================================================
-   WISPER — color system 🎨
-   /colors.css
+/*
+=====================================
+WISPER — color system 🎨
+/colors.css
 
-   Правила:
-   – Цвета объявляются ТОЛЬКО здесь
-   – Никаких hex / rgb / hsl в компонентах
-   – Используем переменные или utility-классы
+Сутры:
+– Цвета объявляются ТОЛЬКО здесь
+– Никаких hex / rgb / hsl в компонентах
+– Используем переменные или utility-классы
 
-   Структура:
-   1. 🌿 Garden — живые, эмоциональные тона
-   2. ☁️ Cloudscape — нейтральная атмосфера
-   3. 🧠 Semantic aliases — смысл, не оттенок
-   4. Utilities — быстрые классы без самодеятельности
-
-   Хочешь изменить настроение проекта —
-   меняй палитру, а не HTML.
-   Цвет — это архитектура, а не декор ✨
-   ================================================== */
+Структура:
+1. 🌿 Garden — живые, эмоциональные тона
+2. ☁️ Cloudscape — нейтральная атмосфера
+3. 🧠 Semantic aliases — смысл, не оттенок
+4. Utilities — быстрые классы без самодеятельности
+===================================== */
 
 
-   :root {
-  /* =======================
-     Garden (Nature Tones)
-     ======================= */
-  --color-iris: #5A57D9;
-  --color-wisteria: #BDBCE4;
+:root {
+/* =======================
+   Garden (Nature Tones)
+   ======================= */
+--color-iris: #5A57D9;
+--color-wisteria: #BDBCE4;
 
-  --color-fig: #C46686;
-  --color-coral: #EBCECE;
+--color-fig: #C46686;
+--color-coral: #EBCECE;
 
-  --color-olive: #788C5D;
-  --color-cactus: #BCD1CA;
+--color-olive: #788C5D;
+--color-cactus: #BCD1CA;
 
-  --color-sky: #6A9BCC;
-  --color-heather: #CBCADB;
+--color-sky: #6A9BCC;
+--color-heather: #CBCADB;
 
-  /* =======================
-     Cloudscape (Grayscale)
-     ======================= */
-  --color-cumulonimbus-dark: #141413;
-  --color-cumulonimbus-medium: #3D3D3A;
-  --color-cumulonimbus-light: #5E5D59;
+/* =======================
+   Cloudscape (Grayscale)
+   ======================= */
+--color-cumulonimbus-dark: #141413;
+--color-cumulonimbus-medium: #3D3D3A;
+--color-cumulonimbus-light: #5E5D59;
 
-  --color-nimbus-dark: #87867F;
-  --color-nimbus-medium: #B0AEA5;
-  --color-nimbus-light: #D1CFC5;
+--color-nimbus-dark: #87867F;
+--color-nimbus-medium: #B0AEA5;
+--color-nimbus-light: #D1CFC5;
 
-  --color-cloud-dark: #D9D9D9;
-  --color-cloud-medium: #F0EEE6;
-  --color-cloud-light: #FAF9F5;
+--color-cloud-dark: #D9D9D9;
+--color-cloud-medium: #F0EEE6;
+--color-cloud-light: #FAF9F5;
 
-  /* =======================
-     Semantic aliases
-     ======================= */
-  --color-primary: var(--color-iris);
-  --color-secondary: var(--color-fig);
-  --color-accent: var(--color-wisteria);
-  --color-bg: var(--color-cloud-light);
-  --color-text: var(--color-cumulonimbus-dark);
-  --color-border: var(--color-nimbus-medium);
+/* =======================
+   Semantic aliases
+   ======================= */
+--color-primary: var(--color-iris);
+--color-secondary: var(--color-fig);
+--color-accent: var(--color-wisteria);
+--color-bg: var(--color-cloud-light);
+--color-text: var(--color-cumulonimbus-dark);
+--color-border: var(--color-nimbus-medium);
 }
 
 /* =======================
-   Utility classes (background)
-   ======================= */
+Background (utility classes)
+======================= */
 .bg-iris { background-color: var(--color-iris); }
 .bg-wisteria { background-color: var(--color-wisteria); }
 .bg-fig { background-color: var(--color-fig); }
@@ -86,8 +83,8 @@
 .bg-cloud-light { background-color: var(--color-cloud-light); }
 
 /* =======================
-   Utility classes (text)
-   ======================= */
+Text (utility classes)
+======================= */
 .text-iris { color: var(--color-iris); }
 .text-wisteria { color: var(--color-wisteria); }
 .text-fig { color: var(--color-fig); }
@@ -110,8 +107,8 @@
 .text-cloud-light { color: var(--color-cloud-light); }
 
 /* =======================
-   Utility classes (border)
-   ======================= */
+Border (utility classes) 
+======================= */
 .border-iris { border-color: var(--color-iris); }
 .border-wisteria { border-color: var(--color-wisteria); }
 .border-fig { border-color: var(--color-fig); }
@@ -122,8 +119,8 @@
 .border-heather { border-color: var(--color-heather); }
 
 /* =======================
-   Utility classes (hover)
-   ======================= */
+Hover (utility classes)
+======================= */
 .hover-bg-iris:hover { background-color: var(--color-iris); }
 .hover-bg-fig:hover { background-color: var(--color-fig); }
 .hover-bg-wisteria:hover { background-color: var(--color-wisteria); }

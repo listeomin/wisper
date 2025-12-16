@@ -1,73 +1,57 @@
-/* ===================================================================
-   CompFontResize
-   js/components/CompFontResize.js
-   🐭 Компонент изменения размеров шрифта
+/*
+=====================================
+CompFontResize
+js/components/CompFontResize.js
 
-   Контракт компонента:
-   – Используется в HTML как <comp-font-resize></comp-font-resize>
-   – Сам регистрируется через customElements.define
-   – Не требует инициализации в HTML или JS
-   – Работает только с DOM (без глобального состояния)
+🐭 Компонент изменения размеров шрифта
 
-   Поведение:
-   – Меняет font-size у целевых элементов (по умолчанию: main, .title)
-   – Элементы с атрибутом data-no-resize игнорируются
+Сутры:
+– Используется в HTML как <comp-font-resize></comp-font-resize>
+– Сам регистрируется через customElements.define
+– Не требует инициализации в HTML или JS
+– Работает только с DOM (без глобального состояния)
 
-   Ограничения:
-   – Не управляет стилями напрямую (CSS живёт отдельно)
-   – Не хранит состояние между перезагрузками
+Поведение:
+– Меняет font-size у целевых элементов (по умолчанию: main, .title)
+– Элементы с атрибутом data-no-resize игнорируются
 
-   =================================================================== */
+Ограничения:
+– Не управляет стилями напрямую (CSS живёт отдельно)
+– Не хранит состояние между перезагрузками
 
+===================================== */
 
-   export class CompFontResize extends HTMLElement {
-    constructor() {
-      super();
-  
-      // Вставляем кнопки прямо внутрь компонента
-      this.innerHTML = `
-        <div class="comp-font-resize">
-          <button id="font-decrease">A-</button>
-          <button id="font-increase">A+</button>
-        </div>
-      `;
-    }
-  
-    connectedCallback() {
-      // Цели для изменения шрифта (main, .title и т.п.)
-      const targets = Array.from(document.querySelectorAll('main, .title'))
-        .filter(el => !el.hasAttribute('data-no-resize'));
-  
-      // Сохраняем текущий размер шрифта
-      targets.forEach(el => {
-        el.dataset.fontSize = parseFloat(getComputedStyle(el).fontSize);
-        el.style.transition = 'font-size 0.2s ease';
-      });
-  
-      // Кнопки внутри компонента
-      const increaseBtn = this.querySelector('#font-increase');
-      const decreaseBtn = this.querySelector('#font-decrease');
-  
-      increaseBtn.addEventListener('click', () => {
-        targets.forEach(el => {
-          let size = parseFloat(el.dataset.fontSize) * 1.1;
-          size = Math.min(size, 24);
-          el.style.fontSize = size + 'px';
-          el.dataset.fontSize = size;
-        });
-      });
-  
-      decreaseBtn.addEventListener('click', () => {
-        targets.forEach(el => {
-          let size = parseFloat(el.dataset.fontSize) * 0.9;
-          size = Math.max(size, 12);
-          el.style.fontSize = size + 'px';
-          el.dataset.fontSize = size;
-        });
-      });
-    }
+const shortWords = [
+  'и', 'в', 'во', 'не', 'на', 'но', 'а', 'с', 'со', 'к', 'ко', 'от', 'за', 'у', 'о', 'об'
+];
+
+/**
+ * Заменяет пробелы после коротких слов на неразрывные
+ * @param {HTMLElement} element - элемент DOM для обработки
+ */
+function fixWidows(element) {
+  element.innerHTML = element.innerHTML.replace(
+    new RegExp(`\\b(${shortWords.join('|')})\\s+`, 'gi'),
+    '$1&nbsp;'
+  );
+}
+
+export class CompNoWidows extends HTMLElement {
+  constructor() {
+    super();
   }
-  
-  // Регистрируем компонент
-  customElements.define('comp-font-resize', CompFontResize);
+
+  connectedCallback() {
+    // Обрабатываем все целевые элементы на странице
+    document.querySelectorAll('p, li, span, h1, h2, h3, h4, h5, h6')
+      .forEach(el => {
+        if (!el.hasAttribute('data-no-widows')) {
+          fixWidows(el);
+        }
+      });
+  }
+}
+
+// Регистрируем компонент
+customElements.define('comp-no-widows', CompNoWidows);
   
